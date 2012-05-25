@@ -113,7 +113,7 @@ def _install_apache2():
 def _install_code():
     sudo('mkdir -p /opt/djangoprojects/')
     with cd('/opt/djangoprojects/'):
-        sudo('git clone https://github.com/ryanniemeyer/uriz.git')
+        sudo('git clone https://sambao21@github.com/sambao21/uriz.git')
 
     with cd('/opt/djangoprojects/uriz/'):
         # Swap in our nginx conf
