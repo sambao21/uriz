@@ -10,7 +10,7 @@ This tutorial assumes you've already created an [AWS](http://aws.amazon.com/) ac
 
 ## Setup Your URL Shortener Domain
 
-The first step is obtaining a domain for your URL shortener from your favorite domain registrar (e.g. [Namecheap](http://namecheap.com/)). I picked uriz.in, so you can simply fork this project and replace all occurrences of uriz.in with whatever your domain is.
+The first step is obtaining a domain for your URL shortener from your favorite domain registrar (e.g. [Namecheap](http://namecheap.com/)). I picked gethack.in, so you can simply fork this project and replace all occurrences of gethack.in with whatever your domain is.
 
 After you've registered your domain, we'll switch its DNS over to Amazon [Route53](http://aws.amazon.com/route53/) to make it easier to take advantage of other Amazon services.
 
@@ -143,7 +143,7 @@ Creating a load balancer is fairly straight forward in the EC2 console:
 ![ELB Confirm](http://d283nftekqpxlr.cloudfront.net/img/github-pages/elb-5.png)
 ![ELB Status](http://d283nftekqpxlr.cloudfront.net/img/github-pages/elb-6.png)
 
-Now that our load balancer is created and our instance is "In Service", let's add this load balancer to our DNS so traffic for our domain starts hitting the [ELB](http://aws.amazon.com/elasticloadbalancing/). We'll point both the naked domain (uriz.in) and the www subdomain (www.uriz.in) to our load balancer:
+Now that our load balancer is created and our instance is "In Service", let's add this load balancer to our DNS so traffic for our domain starts hitting the [ELB](http://aws.amazon.com/elasticloadbalancing/). We'll point both the naked domain (gethack.in) and the www subdomain (www.gethack.in) to our load balancer:
 
 ![Route53 console](http://d283nftekqpxlr.cloudfront.net/img/github-pages/route53-4.png)
 ![Route53 naked domain](http://d283nftekqpxlr.cloudfront.net/img/github-pages/route53-5.png)
@@ -152,8 +152,8 @@ Now that our load balancer is created and our instance is "In Service", let's ad
 
 After those changes, try hitting your URL shortener domain in your browser. It should work:
 
-![uriz.in homepage](http://d283nftekqpxlr.cloudfront.net/img/github-pages/uriz-in-1.png)
-![uriz.in short url info page](http://d283nftekqpxlr.cloudfront.net/img/github-pages/uriz-in-2.png)
+![gethack.in homepage](http://d283nftekqpxlr.cloudfront.net/img/github-pages/uriz-in-1.png)
+![gethack.in short url info page](http://d283nftekqpxlr.cloudfront.net/img/github-pages/uriz-in-2.png)
 
 Sweet. We've got [Route53](http://aws.amazon.com/route53/)->[ELB](http://aws.amazon.com/elasticloadbalancing/)->[EC2](http://aws.amazon.com/ec2/)+[DynamoDB](http://aws.amazon.com/dynamodb/)+[CloudFront](http://aws.amazon.com/cloudfront/) working. Our load balancer is only pointing to a single web node, which isn't cool because machines go down, especially boxes "in the cloud". Plus, this is the best URL shortener anyone has ever produced, so it's highly likely to go viral when Justin Bieber catches wind of it. We've got to be ready for his tweets!
 
@@ -165,4 +165,4 @@ Now you're probably not going to survive a Bieber tweet with two small web nodes
 
 That's it! Not quite [Heroku](http://www.heroku.com/) or [App Engine](https://developers.google.com/appengine/) simple, but the trade off for the additional complexity is more control over the technologies you can use to construct your app. I'm a huge fan of [AWS](http://aws.amazon.com/) and I hope this helps someone out there get started with some of these services.
 
-O yeah, one more thing... Don't forget to shut down your EC2 instances if you're no longer needing them, the meter is running! Chances are http://uriz.in/ won't be up when you read this, the point of this project is for you to deploy your own :)
+O yeah, one more thing... Don't forget to shut down your EC2 instances if you're no longer needing them, the meter is running! Chances are http://gethack.in/ won't be up when you read this, the point of this project is for you to deploy your own :)

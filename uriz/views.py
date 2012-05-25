@@ -20,7 +20,7 @@ class ShortenURLForm(forms.Form):
                                                        'placeholder':_lazy("URL")}))
 
 def index(request):
-    """View for displaying uriz.in homepage and POSTing new URLs."""
+    """View for displaying gethack.in homepage and POSTing new URLs."""
     if request.method == "GET":
         form = ShortenURLForm()
     else:
